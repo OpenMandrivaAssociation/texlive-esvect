@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/esvect
+# catalog-date 2006-10-27 00:09:51 +0200
+# catalog-license gpl
+# catalog-version 1.2
 Name:		texlive-esvect
 Version:	1.2
 Release:	1
@@ -68,6 +74,7 @@ a package to use it.
 #- source
 %doc %{_texmfdistdir}/source/latex/esvect/esvect.dtx
 %doc %{_texmfdistdir}/source/latex/esvect/esvect.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -78,3 +85,5 @@ a package to use it.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
