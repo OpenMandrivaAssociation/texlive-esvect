@@ -1,19 +1,13 @@
-# revision 32098
-# category Package
-# catalog-ctan /macros/latex/contrib/esvect
-# catalog-date 2013-11-08 16:32:20 +0100
-# catalog-license gpl
-# catalog-version 1.3
 Name:		texlive-esvect
-Version:	1.3
-Release:	10
+Version:	32098
+Release:	1
 Summary:	Vector arrows
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/esvect
 License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/esvect.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/esvect.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/esvect.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/esvect.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/esvect.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/esvect.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +20,12 @@ arrows. The package consists of the relevant Metafont code and
 a package to use it.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -67,7 +61,8 @@ a package to use it.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
