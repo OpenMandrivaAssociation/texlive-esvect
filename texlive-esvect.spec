@@ -1,6 +1,6 @@
 Name:		texlive-esvect
 Version:	32098
-Release:	1
+Release:	2
 Summary:	Vector arrows
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/esvect
